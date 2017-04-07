@@ -1,0 +1,257 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+}
+
+/* Kontener służy wyłącznie do konstrukcji, więc się go nie stylizuje */
+.container {
+  max-width: 1060px;
+  width: 100%;
+  margin: 0 auto; /* wysrodkowanie kontenera */
+}
+
+.container::before, .container:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.header {
+  background-color: black;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  width: 50%;
+  float: left;
+  padding: 15px 25px;
+}
+
+.header h1 span {
+  color: #27c7ab;
+}
+
+.header nav {
+  width: 50%;
+  float: right;
+}
+
+.mainMenu {
+  display: inline;
+  list-style-type: none;
+  width: 100%;
+}
+
+.mainMenu li {
+  display: inline-block;
+  position: relative;
+}
+
+.mainMenu li a {
+  display: block;
+  color: #ffffff;
+  padding: 15px 25px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-variant: inherit;
+  text-decoration: none;
+}
+
+.subMenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 120%; /* przestrzeni position: relative */
+  background-color: black;
+  z-index: 9;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 28px solid transparent;
+  border-bottom: 28px solid black;
+  top: -40px;
+  left: calc(50% - 28px);
+}
+
+.hasChildren a:focus + .subMenu {
+  display: block;
+}
+
+#slider {
+  min-height: 400px;
+  background: linear-gradient(#fafafa, #d0cfd7);
+  position: relative;
+}
+#slider img {
+  float: left;
+}
+
+#arrowL {
+  display: block;
+  color: #27c7ab;
+  font-size: 7.2rem;
+  font-variant: inherit;
+  text-decoration: none;
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 8rem;
+}
+
+#arrowR {
+
+  color: #27c7ab;
+  font-size: 7.2rem;
+  font-variant: inherit;
+  text-decoration: none;
+  position: absolute;
+  top: calc(50% - 40px);
+  right: 8rem;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 2rem;
+}
+
+#slider h2 span {
+  color: #27c7ab;
+}
+
+#slider button {
+  font-size: 2rem;
+  display: block;
+  padding: 10px 30px;
+  border: none;
+  color: white;
+  background-color: #27c7ab;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.sliderText p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+#prev {
+  font-size: 7.8rem;
+  color: #27c7ab;
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 40px);
+  border: none;
+  background-color: transparent;
+  background-image: none;
+
+}
+
+#next {
+  font-size: 7.8rem;
+  font-weight: 300;
+  color: #27c7ab;
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 40px);
+  border: none;
+  background-color: transparent;
+  background-image: none;
+}
+#next:focus {
+  outline: 0;
+
+}
+
+/**
+ * Content
+ */
+#content article {
+  float: left;
+  height: 200px;
+  width: 33.3332%;
+  padding: 20px;
+
+}
+#content article:before, #content article:after  {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+article div {
+  min-height: 200px;
+  padding-top: 1px;
+}
+
+.border {
+  padding: 1rem;
+  width: auto;
+  height: auto;
+  border: 2px solid lightgrey;
+  text-align: justify;
+}
+
+#content article h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding: 20px 0;
+  margin: 0;
+  background-color: rgba(255,255,255,.3);
+  margin-top: 40%;
+}
+
+#content article h3 span {
+  border-bottom: 5px solid #27c7ab;
+  padding-right: 20px;
+}
+
+article:first-child div {
+  background-image: url(../images/box1_img.jpg);
+  background-size: cover;
+}
+article:nth-child(2) div {
+  background-image: url(../images/box2_img.jpg);
+  background-size: cover;
+}
+
+#content article:nth-child(3) div h3 {
+  margin: 0;
+}
+
+article p {
+  font-size: 1.4rem;
+}
+
+#prices:before, #prices:after  {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#prices {
+  background-color: #F2F2F2;
+}
+
+#prices .container h3 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  padding: 20px 0;
+  margin: 0;
+  background-color: rgba(255,255,255,.3);
+  margin-top: 40%;
+}
+
+#prices .container h3 span {
+  border-bottom: 5px solid #27c7ab;
+  padding-right: 20px;
+}
