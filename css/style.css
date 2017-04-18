@@ -1,257 +1,546 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Raleway";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+    font-size: 10px;
 }
 
+
 /* Kontener służy wyłącznie do konstrukcji, więc się go nie stylizuje */
+
 .container {
-  max-width: 1060px;
-  width: 100%;
-  margin: 0 auto; /* wysrodkowanie kontenera */
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+    /* wysrodkowanie kontenera */
 }
 
 .container::before, .container:after {
-  display: table;
-  content: "";
-  clear: both;
+    display: table;
+    content: "";
+    clear: both;
 }
 
+
+/* ----------- Header ---------- */
+
 .header {
-  background-color: black;
+    background-color: black;
 }
 
 header h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: white;
-  width: 50%;
-  float: left;
-  padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: white;
+    width: 50%;
+    float: left;
+    padding: 15px 25px;
+    margin-left: 0;
+    text-align: left;
 }
 
 .header h1 span {
-  color: #27c7ab;
+    color: #27c7ab;
+    font-size: 1.4rem;
+    font-weight: normal;
 }
 
 .header nav {
-  width: 50%;
-  float: right;
+    width: 50%;
+    float: right;
+    margin-right: 0;
+    text-align: right;
 }
 
 .mainMenu {
-  display: inline;
-  list-style-type: none;
-  width: 100%;
+    display: inline;
+    list-style-type: none;
+    width: 100%;
 }
 
 .mainMenu li {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
 }
 
 .mainMenu li a {
-  display: block;
-  color: #ffffff;
-  padding: 15px 25px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  font-variant: inherit;
-  text-decoration: none;
+    display: block;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-variant: inherit;
+    text-decoration: none;
 }
 
 .subMenu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 120%; /* przestrzeni position: relative */
-  background-color: black;
-  z-index: 9;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    /* przestrzeni position: relative */
+    background-color: black;
+    z-index: 9;
 }
 
 .triangle {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 28px solid transparent;
-  border-bottom: 28px solid black;
-  top: -40px;
-  left: calc(50% - 28px);
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 28px solid transparent;
+    border-bottom: 28px solid black;
+    top: -40px;
+    left: calc(50% - 28px);
 }
 
-.hasChildren a:focus + .subMenu {
-  display: block;
+.hasChildren a:focus+.subMenu {
+    display: block;
 }
+
+
+/* ----------- Section: slider ---------- */
 
 #slider {
-  min-height: 400px;
-  background: linear-gradient(#fafafa, #d0cfd7);
-  position: relative;
+    height: 500px;
+    background: linear-gradient(#fafafa, #d0cfd7);
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 130px;
+    padding-bottom: 130px;
 }
-#slider img {
-  float: left;
+
+#slider .img {
+    float: left;
+    display: inline-block;
+    width: 48%;
 }
 
 #arrowL {
-  display: block;
-  color: #27c7ab;
-  font-size: 7.2rem;
-  font-variant: inherit;
-  text-decoration: none;
-  position: absolute;
-  top: calc(50% - 40px);
-  left: 8rem;
+    display: block;
+    color: #27c7ab;
+    text-align: left;
+    font-size: 7.2rem;
+    font-variant: inherit;
+    text-decoration: none;
+    position: absolute;
+    top: calc(50% - 40px);
+    width: 6%;
+    margin-right: 1%;
+}
+
+.sliderText {
+    width: 40%;
+    display: inline-block;
 }
 
 #arrowR {
-
-  color: #27c7ab;
-  font-size: 7.2rem;
-  font-variant: inherit;
-  text-decoration: none;
-  position: absolute;
-  top: calc(50% - 40px);
-  right: 8rem;
+    display: inline-block;
+    color: #27c7ab;
+    text-align: right;
+    font-size: 7.2rem;
+    font-variant: inherit;
+    text-decoration: none;
+    position: absolute;
+    top: calc(50% - 40px);
+    width: 6%;
+    margin-left: 1%;
 }
 
-h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin: 2rem 2rem;
+#slider h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 2rem;
+    font-weight: normal;
 }
 
 #slider h2 span {
-  color: #27c7ab;
+    color: #27c7ab;
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 #slider button {
-  font-size: 2rem;
-  display: block;
-  padding: 10px 30px;
-  border: none;
-  color: white;
-  background-color: #27c7ab;
-  border-radius: 10px;
-  margin: 0 auto;
+    display: block;
+    padding: 10px 30px;
+    border: none;
+    background-color: #27c7ab;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#slider button a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
 }
 
 .sliderText p {
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-right: 3%;
 }
 
 
-#prev {
-  font-size: 7.8rem;
-  color: #27c7ab;
-  position: absolute;
-  left: 20px;
-  top: calc(50% - 40px);
-  border: none;
-  background-color: transparent;
-  background-image: none;
+/* ----------- Section: content ---------- */
 
+#content {
+    background-color: white;
 }
 
-#next {
-  font-size: 7.8rem;
-  font-weight: 300;
-  color: #27c7ab;
-  position: absolute;
-  right: 20px;
-  top: calc(50% - 40px);
-  border: none;
-  background-color: transparent;
-  background-image: none;
-}
-#next:focus {
-  outline: 0;
-
-}
-
-/**
- * Content
- */
 #content article {
-  float: left;
-  height: 200px;
-  width: 33.3332%;
-  padding: 20px;
-
+    float: left;
+    height: 200px;
+    width: 33.3332%;
+    margin-left: 0;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 10rem;
+    background-color: white;
 }
-#content article:before, #content article:after  {
-  content: "";
-  clear: both;
-  display: table;
+
+#content article:before, #content article:after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 article div {
-  min-height: 200px;
-  padding-top: 1px;
+    min-height: 200px;
+    padding-top: 1px;
 }
 
 .border {
-  padding: 1rem;
-  width: auto;
-  height: auto;
-  border: 2px solid lightgrey;
-  text-align: justify;
+    padding: 1rem;
+    width: auto;
+    height: auto;
+    border: 2px solid lightgrey;
+    text-align: justify;
 }
 
 #content article h3 {
-  font-size: 1.6rem;
-  line-height: 1.2;
-  padding: 20px 0;
-  margin: 0;
-  background-color: rgba(255,255,255,.3);
-  margin-top: 40%;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: bold;
+    padding: 2rem;
+    margin: 0;
+    background-color: rgba(255, 255, 255, .3);
+    margin-top: 40%;
 }
 
 #content article h3 span {
-  border-bottom: 5px solid #27c7ab;
-  padding-right: 20px;
+    border-bottom: 5px solid #27c7ab;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
 }
 
 article:first-child div {
-  background-image: url(../images/box1_img.jpg);
-  background-size: cover;
+    background-image: url(../images/box1_img.jpg);
+    background-size: cover;
 }
+
 article:nth-child(2) div {
-  background-image: url(../images/box2_img.jpg);
-  background-size: cover;
+    background-image: url(../images/box2_img.jpg);
+    background-size: cover;
 }
 
 #content article:nth-child(3) div h3 {
-  margin: 0;
+    margin: 0;
 }
 
 article p {
-  font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
-#prices:before, #prices:after  {
-  content: "";
-  clear: both;
-  display: table;
+
+/* ----------- Section: prices ---------- */
+
+#prices_stickers h3 {
+    padding: 45px 0;
+    margin-bottom: 45px;
 }
 
-#prices {
-  background-color: #F2F2F2;
+#prices_stickers {
+    background-color: #f1f1f1;
+    margin-top: 50px;
 }
 
-#prices .container h3 {
-  font-size: 1.8rem;
-  line-height: 1.2;
-  padding: 20px 0;
-  margin: 0;
-  background-color: rgba(255,255,255,.3);
-  margin-top: 40%;
+#prices_stickers h3 span {
+    border-bottom: 5px solid #27c7ab;
+    padding-right: 236px;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    color: #575757;
 }
 
-#prices .container h3 span {
-  border-bottom: 5px solid #27c7ab;
-  padding-right: 20px;
+.sticker {
+    float: left;
+    position: relative;
+    height: 500px;
+    width: 330px;
+    background-color: white;
+    border: 2px solid #d2d2d2;
+    margin-right: 2rem;
+    text-align: center;
+    margin-bottom: 6.5rem;
+}
+
+.sticker-top-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d2d2d2;
+    border: 2px solid #d2d2d2;
+    box-shadow: 0 0 0 12px white inset;
+    position: absolute;
+    top: -35px;
+    right: 140px;
+}
+
+.sticker .top {
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+    color: #27c7ab;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.sticker-in-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #d2d2d2;
+    margin: auto;
+}
+
+.sticker-in-circle .price {
+    font-size: 4.5rem;
+    line-height: 6rem;
+    font-weight: bold;
+    vertical-align: middle;
+    color: rgb(194, 194, 194);
+}
+
+.sticker-in-circle sup {
+    vertical-align: 40%;
+    font-size: small;
+}
+
+.sticker-in-circle .price div {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    vertical-align: middle;
+}
+
+.sticker-info {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+    color: rgb(147, 147, 147);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.sticker-info div {
+    font-size: 2.4rem;
+    padding: 10px;
+    background-color: rgb(228, 228, 228);
+}
+
+.sticker-info div:nth-child(even) {
+    background-color: white;
+}
+
+.sticker button {
+    width: 120px;
+    height: 30px;
+    color: white;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    vertical-align: middle;
+    background-color: #27c7ab;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    left: 105px;
+    cursor: pointer;
+}
+
+
+/* ----------- Section: prices - HOVER ---------- */
+
+.sticker:hover {
+    background-color: #27c7ab;
+    border: 2px solid #27c7ab;
+}
+
+.sticker:hover .sticker-top-circle {
+    background-color: white;
+    border: 2px solid #27c7ab;
+    box-shadow: 0 0 0 12px #27c7ab inset;
+}
+
+.sticker:hover .top {
+    color: white;
+}
+
+.sticker:hover .sticker-in-circle {
+    background-color: white;
+    border: 2px solid #27c7ab;
+}
+
+.sticker:hover .sticker-in-circle .price {
+    color: #27c7ab;
+}
+
+.sticker:hover button {
+    color: #27c7ab;
+    background-color: white;
+}
+
+
+/* ----------- Section: contact ---------- */
+
+#contact h3 {
+    margin-top: 4.5rem;
+    margin-bottom: 3.5rem;
+}
+
+#contact {
+    background-color: white;
+}
+
+#contact h3 span {
+    border-bottom: 5px solid #27c7ab;
+    padding-right: 236px;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    color: #575757;
+}
+
+.left {
+    float: left;
+    padding-top: 20px;
+}
+
+.right {
+    float: right;
+}
+
+.in1 {
+    height: 60px;
+    width: 630px;
+    border: 1px solid #27c7ab;
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-indent: 10px;
+}
+
+.ta1 {
+    height: 185px;
+    max-height: 185px;
+    width: 630px;
+    max-width: 630px;
+    border: 1px solid #27c7ab;
+    font-size: 26px;
+    text-indent: 10px;
+}
+
+#contact .right img {
+    margin: auto;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label span {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #27c7ab;
+    margin: -1px 20px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    float: left;
+}
+
+input[type="checkbox"]:checked+label span {
+    background: url('../images/form_ok.jpg');
+    background-position: center center;
+}
+
+label {
+    display: inline-block;
+    line-height: 22.5px;
+    font-size: 20px;
+    color: rgb(194, 194, 194);
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    height: 70px;
+    width: 345px;
+    background-color: #27c7ab;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+/* ----------- Footer ---------- */
+
+footer {
+    padding: 85px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+footer .rights {
+    font-size: 16px;
+    color: #9b9b9b;
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+footer .social-media {
+    display: inline-block;
+    list-style-type: none;
+    float: left;
+    width: 32%;
+    text-align: right;
+}
+
+footer .social-media li {
+    display: inline-block;
+}
+
+footer h2 {
+    font-size: 20px;
+    margin: 0;
+    text-align: right;
+    color: #9b9b9b;
+    display: inline-block;
+    font-weight: normal;
+    float: left;
+    width: 18%;
+}
+
+footer h2 span {
+    font-weight: bold;
+    font-size: 20px;
 }
